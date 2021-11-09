@@ -3,13 +3,14 @@ import java.util.Scanner;
 
 public class Farmer {
     
-    public static void public static void main(String[] args) {
+    public static void main(String[] args) {
 
         Scanner console = new Scanner(System.in);
 
         // Variables
         int appleBins = 0;
         int potatoBins = 0; 
+        String choiceStr;
         char choiceChar;
 
         // Create two different types of feed, for example apple and patato
@@ -25,48 +26,51 @@ public class Farmer {
         // information
 
         // How many new bins of apple do you have?
-        System.out.println("How many new bins of " + feed1.nameFeed + "do you have?");
+        System.out.println("How many new bins of " + feed1.getNameFeed() + " do you have?");
         do {
             while (!console.hasNextInt()) {
-                System.out.println("Whoops! Try that again...")
+                System.out.println("Whoops! Try that again...");
                 console.nextLine();
             }
             appleBins = console.nextInt();
-            if (appleBins <0) {
-                system.out.println("Number can't be negative. Try againg...")
+            if (appleBins < 0) {
+                System.out.println("Number can't be negative. Try again...");
+            }
         } while (appleBins < 0);
 
         // How many new bins of potato do you have
-        System.out.println("How many new bins of " + feed1.nameFeed + "do you have?");
+        System.out.println("How many new bins of " + feed2.getNameFeed() + " do you have?");
         do {
             while (!console.hasNextInt()) {
-                System.out.println("Whoops! Try that again...")
+                System.out.println("Whoops! Try that again...");
                 console.nextLine();
-                potatoBins = console.nextInt();
-                if (potatoBins <0) {
-                    system.out.println("Number can't be negative. Try againg...")
             }
+                potatoBins = console.nextInt();
+                if (potatoBins < 0) {
+                    System.out.println("Number can't be negative. Try again...");
+                }
         } while (potatoBins < 0);
 
         // Would you like to feed the pigs?(Y/N)
         System.out.println("Would you like to feed the pigs?\t(Y/N)");
         do {
-            choiceChar = console.next();
-            choiceChar = choiceStr.toUpprtCase();
+            choiceStr = console.next();
+            choiceStr = choiceStr.toUpprtCase();
             choiceChar = choiceStr.charAt(0);
 
             if (choiceChar != 'Y' && choiceChar != 'N') {
-                System.out.println("Wrong letter. Try Again...");
+                System.out.println("Wrong letter. Try again...");
             }
 
-        // If the answer is yes, pass the feed to each pig to consume
+            // If the answer is yes, pass the feed to each pig to consume
             if (choiceChar == 'Y') {
                 pig1.feed(feed1);
+                System.out.println(pig1.getName() + " was fed a " + feed1.getNameFeed());
                 pig2.feed(feed2);
+                System.out.println(pig2.getName() + " was fed a " + feed1.getNameFeed());
                 pig3.feed(feed2);
-            } else if (choiceChar == 'N') {
-                break;
-            }
+                System.out.println(pig3.getName() + " was fed a " + feed1.getNameFeed());
+            } 
 
         } while (choiceChar != 'Y' && choiceChar != 'N');
 
