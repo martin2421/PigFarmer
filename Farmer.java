@@ -67,8 +67,8 @@ public class Farmer {
                 pig1.feed(feed1);
                 System.out.println(pig1.getName() + " was fed a " + feed1.getNameFeed());
                 pig2.feed(feed2);
-                System.out.println(pig2.getName() + " was fed a " + feed1.getNameFeed());
-                pig3.feed(feed2);
+                System.out.println(pig2.getName() + " was fed a " + feed2.getNameFeed());
+                pig3.feed(feed1);
                 System.out.println(pig3.getName() + " was fed a " + feed1.getNameFeed());
             } 
 
