@@ -1,35 +1,43 @@
 public class Feed {
 
-    // A private static int variable keeping track of the amount of feed that the farmer has in terms of number of bins
-    private static int bins = 0;
-
+     // Variables
+    private boolean isFull;
+    private double weight;
     private String nameFeed;
-    //int numBins;
-
-    // A static public method named getAmount() that returns how many bins of feeed are left
-    public static int getAmount() {
-        return bins; 
+    
+    // Getters & Setters
+    public String getNameFeed() {
+        return nameFeed;
     }
-
-    // A public method called consume that decreases the amount of feed by 1. If the amount of feed is already 0 it 
-    // prints a warning to the farmer that thr are no bins left to be consumed
-    public void consume(){
-        if (bins > 0) {
-            bins--;
-        } else{
-            System.out.println("WARNING! \tNo more bins left to be consumed!")
-        }
+   
+    public void setNameFeed(String nameFeed) {
+        this.nameFeed = nameFeed;
     }
     
-    // A constructor that acceptss two parameters: A name for the feed which is of type tring, and an int value representing the number of bins
-    Feed(String nameFeed_p, int numBin_p) {
-        nameFeed = nameFeed_p;
-        bins += numBins_p;
+    public double getWeight() {
+        return weight;
+    }
+    
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
-    // A public method called add which receives an int value and adds that to the number of bins
-    public void add(int addBin) {
-        bins += addBin;
+    public boolean isFull() {
+          return isFull;
+    }
+   
+    public void setFull(boolean isFull) {
+        this.isFull = isFull;
+    }
+    
+    // Decreases the amount of feed by 1.
+    public void consume() {
+        isFull = false;
+    }
+    
+     // Name for the feed and a value representing the # of bins
+    Feed(String nameFeed_p) {
+        nameFeed = nameFeed_p;
     }
 
 }
