@@ -56,13 +56,13 @@ public class PigCollection {
         String string = "";
 
         for (int i = 0; i < size; i++) {
-            string += pigArray[i] + ", ";
+            string += pigArray[i].getName() + ", ";
         }
 
         if (string != "") {
             string = "[" + string.substring(0, string.length() - 2) + "]";
         } else {
-            string = "";
+            string = "[]";
         }
 
         return string;
