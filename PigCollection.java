@@ -10,7 +10,6 @@ public class PigCollection {
         this.pigArray = new Pig[capacity];
     }
 
-    
     // Getters and Setters
     public Pig[] getPigArray() {
         return pigArray;
@@ -19,8 +18,6 @@ public class PigCollection {
     public void setPigArray(Pig[] pigArray) {
         this.pigArray = pigArray;
     }
-
-
 
     // Grows the capacity of the array
     private void grow() {
