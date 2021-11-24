@@ -2,56 +2,82 @@ import java.time.LocalDate;
 
 public class Pig {
 
-    // A private static variable keeping track of the number of pigs that the farmer has
+    // Keeps track of the # of pigs that the farmer has
     private static int count = 0; 
 
-    // A private boolean variable called isFemale that is set in constructor as well
-    private boolean isFemale; 
-
-    private String name, color;
+    private String name, color, PigID;
     private char sex;
     private LocalDate date;
+    private boolean isFed;
 
     // A static public method named getCount()
     public static int getCount() {
         return count;
     }
 
-    // Getters
+    // Getters & Setters
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public LocalDate getDate() {
         return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public char getSex() {
         return sex;
     }
+    
+    public void setSex(char sex) {
+        this.sex = sex;
+    }
 
     public String getColor() {
         return color;
     }
-
-    // A public method called isFemale that return true if pig is female
-    public boolean isFemale() {
-        boolean answer = false;
-        return answer;
+    
+     public void setColor(String color) {
+        this.color = color;
     }
 
-    // A constructor that accepts name, sex and color of each pig. The constructor
-    // also sets the date of birth for the pig to the current date
-    // Color of pig which is a string set when initialized using the constructor
+    public String getPigID() {
+        return pigID;
+    }
+
+    public void setPigID(String pigID) {
+        this.pigID = pigID;
+    }
+
+    public static void setCount(int count) {
+        Pig.count = count;
+    }
+
+    public boolean isFed() {
+        return isFed;
+    }
+
+    public void setFed(boolean isFed) {
+        this.isFed = isFed;
+    }
+
+    // Constructor with ID, name, sex, color, date
     Pig(String name_p, char sex_p, String color_p, LocalDate date_p) {
+        pigID =pigID_p;
         name = name_p;
         sex = sex_p;
         color = color_p;
         date = date_p;
     }
 
-    // A method feed that accepts an object of type Feed and calls the method
-    // consume on the object
+  // Accepts an object of type Feed and calls the method consume on the object
     public void feed(Feed feedObj) {
         feedObj.consume();
     }
