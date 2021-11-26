@@ -38,6 +38,7 @@ public class Feed {
      // Name for the feed and a value representing the # of bins
     Feed(String nameFeed_p) {
         nameFeed = nameFeed_p;
+        isFull = true;
     }
 
 }
