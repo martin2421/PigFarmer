@@ -20,9 +20,9 @@ public class FeedCollection {
     // Set a Feed object to a particular location in array
     public void setFeedNumber(int location, Feed feed) {
         try {
-            feed = feedArray[location];
+            feedArray[location - 1] = feed;
         } catch (Exception e) {
-            System.out.println("Whoops! Bin is full (max capacity: " + SIZE);
+            System.out.println("Whoops! Bin is full (max capacity: " + SIZE + ")");
         }
     }
 
