@@ -30,12 +30,12 @@ public class Feed {
         this.isFull = isFull;
     }
     
-    // Decreases the amount of feed by 1.
+    // isFull is set to false (bin has been consumed)
     public void consume() {
         isFull = false;
     }
     
-     // Name for the feed and a value representing the # of bins
+    // Name for the feed and set isFull to true
     Feed(String nameFeed_p) {
         nameFeed = nameFeed_p;
         isFull = true;
