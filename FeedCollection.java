@@ -22,7 +22,7 @@ public class FeedCollection {
         try {
             feedArray[location - 1] = feed;
         } catch (Exception e) {
-            System.out.println("Whoops! Bin is full (max capacity: " + SIZE + ")");
+            System.out.println("Whoops! That bin doesn't exist...");
         }
     }
 
